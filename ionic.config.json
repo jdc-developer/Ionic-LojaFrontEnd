@@ -1,5 +1,7 @@
 {
   "name": "Ionic-LojaFrontEnd",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
