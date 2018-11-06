@@ -9,6 +9,7 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { CategoriaService } from './../services/domain/categoria.service';
+import { ClienteService } from './../services/domain/cliente.service';
 import { MyApp } from './app.component';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MyApp } from './app.component';
   providers: [
     AuthService,
     CategoriaService,
+    ClienteService,
     ErrorInterceptorProvider,
     StatusBar,
     StorageService,
