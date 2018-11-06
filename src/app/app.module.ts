@@ -11,6 +11,7 @@ import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { CategoriaService } from './../services/domain/categoria.service';
 import { ClienteService } from './../services/domain/cliente.service';
+import { ProdutoService } from './../services/domain/produto.service';
 import { MyApp } from './app.component';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MyApp } from './app.component';
     CategoriaService,
     ClienteService,
     ErrorInterceptorProvider,
+    ProdutoService,
     StatusBar,
     StorageService,
     SplashScreen,
