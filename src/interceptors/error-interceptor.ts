@@ -17,6 +17,8 @@ export class ErrorInterceptor implements HttpInterceptor {
                 errorObj = JSON.parse(errorObj);
             }
 
+            console.log(errorObj);
+
             return Observable.throw(errorObj);
         }) as any;
     }

@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
+import { AuthService } from '../services/auth.service';
 import { CategoriaService } from './../services/domain/categoria.service';
 import { MyApp } from './app.component';
 
@@ -23,6 +24,7 @@ import { MyApp } from './app.component';
     MyApp
   ],
   providers: [
+    AuthService,
     CategoriaService,
     ErrorInterceptorProvider,
     StatusBar,
