@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
+import { ImageUtilService } from '../image-util.service';
 import { API_CONFIG } from './../../config/api.config';
 import { ClienteDTO } from './../../models/cliente.dto';
 
 @Injectable()
 export class ClienteService {
 
-    constructor(public http: HttpClient) {
+    constructor(public http: HttpClient, public imgServ: ImageUtilService) {
     }
 
     findById(id: string) {
@@ -26,6 +27,17 @@ export class ClienteService {
 
     insert(obj: ClienteDTO) {
         return this.http.post(`${API_CONFIG.baseUrl}/clientes`, obj,
+            {
+                observe: 'response',
+                responseType: 'text'
+            });
+    }
+
+    uploadPicture(picture) {
+        let pictureBlob = this.imgServ.dataUriToBlob(picture);
+        let formData: FormData = new FormData();
+        formData.set('file', pictureBlob, 'file.png');
+        return this.http.post(`${API_CONFIG.baseUrl}/clientes/picture`, formData,
             {
                 observe: 'response',
                 responseType: 'text'
